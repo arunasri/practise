@@ -6,7 +6,8 @@
       <class name="com.bank.tests.HomePageIT">
         <methods>
           <include name="tearDown"/>
-          <include name="testWellsFargo"/>
+          <include name="testCareers"/>
+          <include name="testEnroll"/>
           <include name="SetUp"/>
         </methods>
       </class> <!-- com.bank.tests.HomePageIT -->

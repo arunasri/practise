@@ -63,7 +63,7 @@
 				<version>2.19.1</version>
 				<configuration>
 					<log4j.configuration>log4j.properties</log4j.configuration>
-					<threadCount>2</threadCount>
+					<threadCount>1</threadCount>
 					<parallel>methods</parallel>
 				</configuration>
 				<executions>

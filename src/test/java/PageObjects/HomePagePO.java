@@ -34,7 +34,7 @@ public class HomePagePO extends BasePage {
 	@FindBy(how = How.PARTIAL_LINK_TEXT, using = "Financial Education")
 	public WebElement financialEducationLink;
 	@FindBy(how = How.PARTIAL_LINK_TEXT, using = "About Wells Fargo")
-	public WebElement aboutWellsFargoLink;
+	public WebElement aboutWellsFargoLinkup;
 	//Sign on Main
 	@FindBy(how = How.NAME, using = "destination")
 	public WebElement formdropdown;
@@ -48,6 +48,11 @@ public class HomePagePO extends BasePage {
 	public WebElement signOnButton;
 	@FindBy(how = How.PARTIAL_LINK_TEXT, using = "Forgot Password/Username? ")
 	public WebElement forgotPasswordLink;
-
+	
+	//Bottom home page links
+	@FindBy(how = How.PARTIAL_LINK_TEXT, using = "About Wells Fargo")
+	public WebElement aboutWellsFargoLinkDown;
+	@FindBy(how = How.PARTIAL_LINK_TEXT, using = "Careers")
+	public WebElement careersLink;
 
 }
