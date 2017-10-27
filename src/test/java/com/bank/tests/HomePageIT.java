@@ -1,9 +1,12 @@
 package com.bank.tests;
 
+import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -17,11 +20,14 @@ public class HomePageIT extends BaseIT {
 	private WebDriver driver;
 	private String baseUrl;
 	private StringBuffer verificationErrors = new StringBuffer();
-	
+
+	public static final String USERNAME = "YOUR_USERNAME";
+	public static final String ACCESS_KEY = "5eff05a3-a91a-41aa-90ff-0a54533fe9ba";
+	public static final String SELENIUM_GRID = "https://" + USERNAME + ":" + ACCESS_KEY + "@ondemand.saucelabs.com:443/wd/hub";
+
 	@BeforeClass(alwaysRun = true)
 	public void SetUp() throws Exception {
-		driver = new ChromeDriver();
-		// driver = new RemoteWebDriver(new URL("http://35.193.227.180:4444/wd/hub"),DesiredCapabilities.chrome());
+		driver = new RemoteWebDriver(new URL(SELENIUM_GRID), DesiredCapabilities.chrome());
 		baseUrl = "https://www.wellsfargo.com/";
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
