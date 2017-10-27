@@ -26,7 +26,12 @@ public class HomePageIT extends BaseIT {
 
 	@BeforeClass(alwaysRun = true)
 	public void SetUp() throws Exception {
-		driver = new RemoteWebDriver(new URL(SELENIUM_GRID), DesiredCapabilities.chrome());
+	    if (System.getenv("SAUCE_LAB_KEY") == null) {
+            driver = new ChromeDriver();
+        } else {
+
+            driver = new RemoteWebDriver(new URL(SELENIUM_GRID), DesiredCapabilities.chrome());
+        }
 		baseUrl = "https://www.wellsfargo.com/";
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
