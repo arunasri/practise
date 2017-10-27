@@ -22,8 +22,7 @@ public class HomePageIT extends BaseIT {
 	private StringBuffer verificationErrors = new StringBuffer();
 
 	public static final String USERNAME = "arunasri";
-	public static final String ACCESS_KEY = "5eff05a3-a91a-41aa-90ff-0a54533fe9ba";
-	public static final String SELENIUM_GRID = "https://" + USERNAME + ":" + ACCESS_KEY + "@ondemand.saucelabs.com:443/wd/hub";
+	public static final String SELENIUM_GRID = "https://" + USERNAME + ":" + System.getenv("SAUCE_LAB_KEY") + "@ondemand.saucelabs.com:443/wd/hub";
 
 	@BeforeClass(alwaysRun = true)
 	public void SetUp() throws Exception {
