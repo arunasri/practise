@@ -36,7 +36,18 @@ public class HomePageIT extends BaseIT {
 		baseUrl = "https://www.wellsfargo.com/";
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
+	@Test(priority = 3)
+	public void testCareers() throws Exception {
+		// open browser
+		driver.get(baseUrl);
+		HomePagePO home = new HomePagePO(driver);
+		home.careersLink.click();
+		// Verify page title is present
+		WebElement careers = driver.findElement(By.id("skip"));
+		Assert.assertEquals(true, careers.isDisplayed());
+		System.out.println("careers title is present");
 
+	}
 	@Test(priority = 1)
 	public void testWellsFargo() throws Exception {
 		// preconditions
@@ -75,17 +86,6 @@ public class HomePageIT extends BaseIT {
 	// System.out.println("Logo link is clicked");
 	// this.screenshot(driver,"home", "home_link.png");
 
-	@Test(priority = 3)
-	public void testCareers() throws Exception {
-		// open browser
-		driver.get(baseUrl);
-		HomePagePO home = new HomePagePO(driver);
-		home.careersLink.click();
-		// Verify page title is present
-		WebElement careers = driver.findElement(By.id("skip"));
-		Assert.assertEquals(true, careers.isDisplayed());
-		System.out.println("careers title is present");
-
-	}
+	
 
 }
