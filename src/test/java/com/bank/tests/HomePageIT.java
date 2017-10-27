@@ -13,8 +13,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import PageObjects.EnrollPO;
-import PageObjects.HomePagePO;
+import com.bank.pageobjects.EnrollPO;
+import com.bank.pageobjects.HomePagePO;
 
 public class HomePageIT extends BaseIT {
 	private WebDriver driver;
